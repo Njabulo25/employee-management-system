@@ -37,6 +37,18 @@ body {
     min-height: 100vh;
 }
 
+/* Hamburger Button */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+    padding: 4px 8px;
+    line-height: 1;
+}
+
 /* Sidebar */
 .sidebar {
     width: var(--sidebar-width);
@@ -49,6 +61,12 @@ body {
     display: flex;
     flex-direction: column;
     z-index: 100;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .sidebar-logo {
@@ -118,7 +136,6 @@ body {
     padding: 32px;
 }
 
-/* Page */
 .page {
     display: none;
 }
@@ -127,7 +144,6 @@ body {
     display: block;
 }
 
-/* Page Header */
 .page-header {
     margin-bottom: 28px;
 }
@@ -145,7 +161,6 @@ body {
     margin-top: 4px;
 }
 
-/* Stats Row */
 .stats-row {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -176,7 +191,6 @@ body {
     margin-top: 4px;
 }
 
-/* Toolbar */
 .toolbar {
     display: flex;
     justify-content: space-between;
@@ -229,7 +243,6 @@ body {
     border-color: var(--primary);
 }
 
-/* Buttons */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -277,7 +290,6 @@ body {
     font-size: 12px;
 }
 
-/* Table */
 .table-wrapper {
     background: var(--white);
     border-radius: var(--radius);
@@ -350,7 +362,6 @@ tbody tr:last-child td {
     font-size: 14px;
 }
 
-/* Status Badges */
 .badge {
     display: inline-block;
     padding: 4px 10px;
@@ -381,7 +392,6 @@ tbody tr:last-child td {
     color: var(--gray-500);
 }
 
-/* Actions Cell */
 .actions-cell {
     display: flex;
     gap: 6px;
@@ -416,7 +426,6 @@ tbody tr:last-child td {
     border-color: var(--gray-300);
 }
 
-/* Modal */
 .modal-overlay {
     display: none;
     position: fixed;
@@ -486,7 +495,6 @@ tbody tr:last-child td {
     bottom: 0;
 }
 
-/* Form */
 .form-group {
     margin-bottom: 18px;
 }
@@ -527,7 +535,6 @@ tbody tr:last-child td {
     gap: 16px;
 }
 
-/* View Details */
 .detail-section {
     margin-bottom: 20px;
 }
@@ -563,7 +570,6 @@ tbody tr:last-child td {
     font-weight: 500;
 }
 
-/* Skills Tags */
 .skills-container {
     display: flex;
     flex-wrap: wrap;
@@ -614,7 +620,6 @@ tbody tr:last-child td {
     border-color: #2563eb;
 }
 
-/* Toast Notifications */
 .toast-container {
     position: fixed;
     bottom: 24px;
@@ -668,10 +673,14 @@ tbody tr:last-child td {
 }
 
 /* ========================================== */
-/* MOBILE RESPONSIVE                         */
+/* MOBILE RESPONSIVE                          */
 /* ========================================== */
 
 @media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
     body {
         flex-direction: column;
     }
@@ -680,22 +689,25 @@ tbody tr:last-child td {
         width: 100%;
         height: auto;
         position: relative;
-        flex-direction: row;
-        padding: 10px 12px;
-        flex-wrap: wrap;
-        gap: 8px;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .sidebar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 14px;
+        background-color: var(--gray-900);
     }
 
     .sidebar-logo {
         padding: 0;
         border-bottom: none;
-        display: flex;
-        align-items: center;
-        gap: 8px;
     }
 
     .sidebar-logo h2 {
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .sidebar-logo span {
@@ -703,23 +715,26 @@ tbody tr:last-child td {
     }
 
     .sidebar-nav {
-        display: flex;
-        flex-direction: row;
+        display: none;
+        flex-direction: column;
         padding: 0;
-        gap: 2px;
-        overflow-x: auto;
-        flex: 1;
+        background-color: var(--gray-800);
+    }
+
+    .sidebar-nav.open {
+        display: flex;
     }
 
     .sidebar-nav a {
-        padding: 6px 10px;
-        font-size: 11px;
-        white-space: nowrap;
-        gap: 4px;
+        padding: 12px 16px;
+        font-size: 14px;
+        border-radius: 0;
+        margin-bottom: 0;
+        border-bottom: 1px solid var(--gray-700);
     }
 
-    .sidebar-nav a .icon {
-        font-size: 14px;
+    .sidebar-nav a:last-child {
+        border-bottom: none;
     }
 
     .sidebar-footer {
@@ -765,10 +780,6 @@ tbody tr:last-child td {
         max-width: 100%;
     }
 
-    .filter-group {
-        flex-wrap: wrap;
-    }
-
     .filter-group select {
         flex: 1;
         min-width: 0;
@@ -788,10 +799,6 @@ tbody tr:last-child td {
     th, td {
         padding: 8px 10px;
         font-size: 12px;
-    }
-
-    .actions-cell {
-        flex-wrap: nowrap;
     }
 
     .action-btn {

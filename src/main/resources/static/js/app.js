@@ -1,9 +1,21 @@
 const API_BASE = '/api/employees';
 
+// Hamburger menu toggle
+function toggleMenu() {
+    document.getElementById('sidebarNav').classList.toggle('open');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     setupNavigation();
     setupSearchListeners();
     loadDashboard();
+
+    // Close mobile menu when a nav link is clicked
+    document.querySelectorAll('.sidebar-nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.getElementById('sidebarNav').classList.remove('open');
+        });
+    });
 });
 
 function setupNavigation() {

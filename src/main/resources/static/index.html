@@ -10,11 +10,14 @@
 
 <!-- Sidebar -->
 <aside class="sidebar">
-    <div class="sidebar-logo">
-        <h2>EmployeeHub</h2>
-        <span>Management System</span>
+    <div class="sidebar-header">
+        <div class="sidebar-logo">
+            <h2>EmployeeHub</h2>
+            <span>Management System</span>
+        </div>
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
     </div>
-    <nav class="sidebar-nav">
+    <nav class="sidebar-nav" id="sidebarNav">
         <a href="#" class="active" data-page="dashboard">
             <span class="icon">📊</span> Dashboard
         </a>
