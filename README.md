@@ -2,7 +2,19 @@
 
 A web application to manage employee records. Built with Spring Boot to replace the JEE/GlassFish stack I learned at TUT.
 
-**How friends can access this:** Currently runs on my local machine at `http://localhost:8080`. I will deploy it online soon so anyone can use it from a link.
+## 🌐 Live Demo
+
+**Live Application:** [https://employee-management-system-3kne.onrender.com](https://employee-management-system-3kne.onrender.com)
+
+> Note: Hosted on Render's free tier. First load may take up to 30 seconds while the server wakes up.
+
+## ☁️ Hosting & Deployment
+
+| Service | Purpose | Plan |
+|---------|---------|------|
+| Render | Hosts the Spring Boot app | Free |
+| Clever Cloud | MySQL database hosting | Free |
+| GitHub | Source code & version control | Free |
 
 ## What This System Does
 
@@ -49,6 +61,7 @@ The biggest difference: In JEE I wrote JPQL queries manually. In Spring Boot, th
 ![Dashboard](screenshots/dashboard.jpeg)
 ![Employee List](screenshots/employees.jpeg)
 ![Employee Details](screenshots/details.jpeg)
+![Mobile View](screenshots/mobile.jpeg)
 
 ## How to Run This Project
 
@@ -136,6 +149,10 @@ http://localhost:8080/api/employees
 
 ## Author
 
-Njabulo Rikhotso - Built as a personal project to practice Spring Boot after learning JEE at TUT.
+**Njabulo Rikhotso** – Built as a personal project to practice Spring Boot after learning JEE at TUT.
 
-GitHub: [https://github.com/Njabulo25](https://github.com/Njabulo25)
+GitHub: https://github.com/Njabulo25
+
+Repository: https://github.com/Njabulo25/employee-management-system
+
+Live Application: https://employee-management-system-3kne.onrender.com
