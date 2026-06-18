@@ -59,6 +59,7 @@ body {
 .sidebar-logo h2 {
     font-size: 18px;
     font-weight: 700;
+    letter-spacing: -0.3px;
 }
 
 .sidebar-logo span {
@@ -117,6 +118,7 @@ body {
     padding: 32px;
 }
 
+/* Page */
 .page {
     display: none;
 }
@@ -125,6 +127,7 @@ body {
     display: block;
 }
 
+/* Page Header */
 .page-header {
     margin-bottom: 28px;
 }
@@ -133,6 +136,7 @@ body {
     font-size: 26px;
     font-weight: 700;
     color: var(--gray-900);
+    letter-spacing: -0.5px;
 }
 
 .page-header p {
@@ -141,7 +145,7 @@ body {
     margin-top: 4px;
 }
 
-/* Stats */
+/* Stats Row */
 .stats-row {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -162,6 +166,7 @@ body {
     font-weight: 600;
     color: var(--gray-500);
     text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .stat-card .stat-value {
@@ -194,6 +199,7 @@ body {
     border-radius: var(--radius);
     font-size: 14px;
     background-color: var(--white);
+    transition: border-color 0.15s;
 }
 
 .search-box input:focus {
@@ -308,6 +314,7 @@ th {
     font-weight: 700;
     color: var(--gray-500);
     text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 td {
@@ -343,7 +350,7 @@ tbody tr:last-child td {
     font-size: 14px;
 }
 
-/* Badges */
+/* Status Badges */
 .badge {
     display: inline-block;
     padding: 4px 10px;
@@ -351,6 +358,7 @@ tbody tr:last-child td {
     font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
+    letter-spacing: 0.3px;
 }
 
 .badge-active {
@@ -373,7 +381,7 @@ tbody tr:last-child td {
     color: var(--gray-500);
 }
 
-/* Actions */
+/* Actions Cell */
 .actions-cell {
     display: flex;
     gap: 6px;
@@ -503,6 +511,7 @@ tbody tr:last-child td {
     border-radius: 6px;
     font-size: 14px;
     color: var(--gray-800);
+    transition: border-color 0.15s;
 }
 
 .form-group input:focus,
@@ -518,7 +527,7 @@ tbody tr:last-child td {
     gap: 16px;
 }
 
-/* Detail View */
+/* View Details */
 .detail-section {
     margin-bottom: 20px;
 }
@@ -528,6 +537,7 @@ tbody tr:last-child td {
     font-weight: 700;
     color: var(--gray-500);
     text-transform: uppercase;
+    letter-spacing: 0.5px;
     margin-bottom: 12px;
     padding-bottom: 8px;
     border-bottom: 1px solid var(--gray-200);
@@ -553,7 +563,7 @@ tbody tr:last-child td {
     font-weight: 500;
 }
 
-/* Skills */
+/* Skills Tags */
 .skills-container {
     display: flex;
     flex-wrap: wrap;
@@ -578,6 +588,7 @@ tbody tr:last-child td {
     font-weight: 700;
     font-size: 16px;
     opacity: 0.5;
+    transition: opacity 0.15s;
 }
 
 .skill-remove:hover {
@@ -603,7 +614,7 @@ tbody tr:last-child td {
     border-color: #2563eb;
 }
 
-/* Toast */
+/* Toast Notifications */
 .toast-container {
     position: fixed;
     bottom: 24px;
@@ -656,150 +667,41 @@ tbody tr:last-child td {
     flex: 1;
 }
 
-/* ========================================== */
-/* MOBILE RESPONSIVE                         */
-/* ========================================== */
-
+/* Responsive */
 @media (max-width: 768px) {
-    body {
-        flex-direction: column;
-    }
-
     .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-        flex-direction: row;
-        padding: 10px 12px;
-        flex-wrap: wrap;
+        width: 60px;
     }
 
-    .sidebar-logo {
-        padding: 0;
-        border-bottom: none;
-    }
-
-    .sidebar-logo h2 {
-        font-size: 16px;
-    }
-
-    .sidebar-logo span {
-        display: none;
-    }
-
-    .sidebar-nav {
-        display: flex;
-        flex-direction: row;
-        padding: 0;
-        gap: 4px;
-        overflow-x: auto;
-    }
-
-    .sidebar-nav a {
-        padding: 6px 10px;
-        font-size: 12px;
-        white-space: nowrap;
-    }
-
-    .sidebar-nav a .icon {
-        display: none;
-    }
-
+    .sidebar-logo h2,
+    .sidebar-logo span,
+    .sidebar-nav a span,
     .sidebar-footer {
         display: none;
     }
 
-    .main-content {
-        margin-left: 0;
-        padding: 12px;
+    .sidebar-nav a {
+        justify-content: center;
     }
 
-    .page-header h1 {
-        font-size: 20px;
+    .main-content {
+        margin-left: 60px;
+        padding: 16px;
     }
 
     .stats-row {
         grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-
-    .stat-card {
-        padding: 12px;
-    }
-
-    .stat-card .stat-value {
-        font-size: 20px;
     }
 
     .toolbar {
         flex-direction: column;
-        align-items: stretch;
     }
 
     .search-box {
         max-width: 100%;
     }
 
-    .filter-group select {
-        flex: 1;
-    }
-
-    .table-wrapper {
-        overflow-x: auto;
-    }
-
-    table {
-        min-width: 600px;
-    }
-
-    th, td {
-        padding: 8px 10px;
-        font-size: 12px;
-    }
-
-    .modal {
-        width: 96%;
-        margin: 8px auto;
-        max-height: 90vh;
-    }
-
-    .modal-header {
-        padding: 12px 14px;
-    }
-
-    .modal-header h3 {
-        font-size: 16px;
-    }
-
-    .modal-body {
-        padding: 14px;
-    }
-
-    .modal-footer {
-        padding: 10px 14px;
-        flex-wrap: wrap;
-    }
-
-    .modal-footer .btn {
-        flex: 1;
-    }
-
     .form-row {
         grid-template-columns: 1fr;
-    }
-
-    .detail-row {
-        grid-template-columns: 1fr;
-    }
-
-    .toast-container {
-        left: 10px;
-        right: 10px;
-        bottom: 10px;
-    }
-
-    .toast {
-        min-width: auto;
-        max-width: 100%;
     }
 }
